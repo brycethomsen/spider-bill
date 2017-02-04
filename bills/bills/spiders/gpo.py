@@ -12,13 +12,12 @@ class GpoSpider(scrapy.Spider):
 
 
     def parse(self, response):
-        #response.xpath('//a[contains(@href, "xml")]/@href').extract()
         for page in response.xpath('//div[@id="bulkdata"]/table/tr'):
             if page.xpath('.//a[contains(@href, "xml")]/@href').extract_first():
                 yield {
-                    'bill': page.xpath('.//td[1]/a/@href').extract_first()
-                    'date': page.xpath('.//td[2]/text()').extract_first()
-                    'size': page.xpath('.//td[3]/text()').extract_first()
+                    'bill': page.xpath('.//td[1]/a/@href').extract_first(),
+                    'date': page.xpath('.//td[2]/text()').extract_first(),
+                    'size': page.xpath('.//td[3]/text()').extract_first(),
                 }
 
         next_page = response.css('li.next a::attr(href)').extract_first()
