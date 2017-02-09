@@ -9,6 +9,7 @@ import scrapy
 
 
 class BillsItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    bill = scrapy.Field()
+    date = scrapy.Field()
+    size = scrapy.Field()
+    link = scrapy.Field()
