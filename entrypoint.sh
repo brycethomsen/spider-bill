@@ -1,2 +1,2 @@
-#!/bin/bash
-scrapy crawl gpo -o gpo_items.json
+#!/bin/sh
+scrapy crawl gpo -o out/gpo_items.json

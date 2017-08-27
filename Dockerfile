@@ -10,5 +10,6 @@ RUN apk add ${RUNTIME_PACKAGES} ${BUILD_PACKAGES} && \
   pip install scrapy ipython && \
   apk del ${BUILD_PACKAGES} && \
   rm -rf /root/.cache
-COPY bill/ /spider
-CMD ["entrypoint.sh"]
+COPY bills/ /spider
+COPY entrypoint.sh /tmp/entrypoint.sh
+CMD ["/tmp/entrypoint.sh"]
