@@ -1,7 +1,7 @@
 # SpiderBill
 Crawl and gather bill information from: https://www.gpo.gov/fdsys/bulkdata
 
-## Crawlin' Time:
+## Basic Usage:
 ```
-scrapy crawl gpo -o gpo_items.json
+docker run --rm -d -v `pwd`/out:/spider/out brycethomsen/scrapy
 ```

@@ -11,9 +11,9 @@ class GpoSpider(scrapy.Spider):
         'https://www.gpo.gov/fdsys/bulkdata',
     ]
 
-    #rules = (
-    #    Rule(LinkExtractor(allow=('https://www.gpo.gov/fdsys/bulkdata/*')),callback='parse')
-    #)
+    rules = (
+       Rule(LinkExtractor(allow=('^https://www.gpo.gov/fdsys/bulkdata/*'),unique=True),callback='parse')
+    )
 
 
     def parse(self, response):
