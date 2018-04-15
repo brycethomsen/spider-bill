@@ -3,7 +3,7 @@ Crawl and gather bill information from: https://www.gpo.gov/fdsys/bulkdata
 
 ## Basic Usage:
 ```
-docker run --rm -d -v `pwd`/out:/spider/out brycethomsen/scrapy
+docker run --rm -d -v `pwd`/out:/spider/out brycethomsen/spider-bill:development
 ```
 
 ### Todos:
